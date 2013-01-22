@@ -1,3 +1,6 @@
+<!--
+This page shows the output data that is fetched by the server.
+-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head><title>Weather Information</title></head>

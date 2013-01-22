@@ -1,3 +1,10 @@
+/*
+ * System : WeatherApplication
+ * Package: de.gags.validator
+ * Class  : WeatherValidatorTest
+ *
+ * Veristrat Software 2013
+ */
 package de.gags.validator;
 
 import de.gags.model.WeatherInfo;
@@ -8,6 +15,9 @@ import org.junit.Test;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 
+/**
+ * This class tests the WeatherValidator implementation.
+ */
 public class WeatherValidatorTest
 {
     private WeatherInfo weatherInfo;
@@ -29,6 +39,9 @@ public class WeatherValidatorTest
         result = null;
     }
 
+    /**
+     * This method test the empty zip code value.
+     */
     @Test
     public void testEmptyZipCode()
     {
@@ -37,6 +50,9 @@ public class WeatherValidatorTest
         Assert.assertTrue("Zip code can't be empty", result.hasErrors());
     }
 
+    /**
+     * This method test the zip code value containing white space.
+     */
     @Test
     public void testWhiteSpaceZipCode()
     {
@@ -45,6 +61,9 @@ public class WeatherValidatorTest
         Assert.assertTrue("Zip code can't be null", result.hasErrors());
     }
 
+    /**
+     * This method tests the length of the zip code.
+     */
     @Test
     public void testZipCodeLength()
     {
@@ -53,6 +72,9 @@ public class WeatherValidatorTest
         Assert.assertTrue("Zip code value should be greater than equal to 5", result.hasErrors());
     }
 
+    /**
+     * This method tests the invalid zip code value.
+     */
     @Test
     public void testInvalidZipCode()
     {
@@ -60,4 +82,5 @@ public class WeatherValidatorTest
         validator.validate(weatherInfo, result);
         Assert.assertTrue("Zip code can't be alphanumeric", result.hasErrors());
     }
-}
+
+} // End Class WeatherValidatorTest

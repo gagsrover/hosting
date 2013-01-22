@@ -1,3 +1,10 @@
+/*
+ * System : WeatherApplication
+ * Package: de.gags.validator
+ * Class  : WeatherValidator
+ *
+ * Veristrat Software 2013
+ */
 package de.gags.validator;
 
 import de.gags.model.WeatherInfo;
@@ -5,15 +12,16 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+/**
+ * This class validates the input data.
+ */
 public class WeatherValidator implements Validator
 {
-    @Override
     public boolean supports(Class aClass)
     {
         return WeatherInfo.class.isAssignableFrom(aClass);
     }
 
-    @Override
     public void validate(Object target, Errors errors)
     {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "zipCode", "required.zipCode", "Zip Code is required!");
@@ -34,4 +42,5 @@ public class WeatherValidator implements Validator
             errors.rejectValue("zipCode", "invalid.zipCode");
         }
     }
-}
+
+} // End Class WeatherValidator

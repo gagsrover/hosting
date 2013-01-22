@@ -1,3 +1,11 @@
+/*
+ * System : WeatherApplication
+ * Package: de.gags.service.impl
+ * Class  : WeatherServiceImpl
+ *
+ * Veristrat Software 2013
+ */
+
 package de.gags.service.impl;
 
 import de.gags.common.WeatherConstants;
@@ -11,12 +19,20 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.Map;
 
+/**
+ * This class provides implementation of WeatherService.
+ */
 @Service
 public class WeatherServiceImpl implements WeatherService, WeatherConstants
 {
-    @Override
+    /**
+     * This method fetches weather information from wunderground.com weather API.
+     *
+     * @param weatherInfo WeatherInfo model object.
+     *
+     * @throws Exception if some exception occurs while fetching weather data.
+     */
     public void fetchWeatherData(WeatherInfo weatherInfo) throws Exception
     {
         String zipCode = weatherInfo.getZipCode().toString();
@@ -43,6 +59,6 @@ public class WeatherServiceImpl implements WeatherService, WeatherConstants
         {
             throw new WeatherException("Weather information not found, please check zip code entered!!!");
         }
-
     }
-}
+
+} // End Class WeatherServiceImpl

@@ -1,3 +1,10 @@
+/*
+ * System : WeatherApplication
+ * Package: de.gags.service
+ * Class  : WeatherServiceTest
+ *
+ * Veristrat Software 2013
+ */
 package de.gags.service;
 
 import de.gags.exception.WeatherException;
@@ -8,6 +15,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class test the WeatherService implementation.
+ */
 public class WeatherServiceTest
 {
     private WeatherInfo weatherInfo;
@@ -27,18 +37,29 @@ public class WeatherServiceTest
         weatherService = null;
     }
 
+    /**
+     * This method tests weather service for correct zip code value.
+     *
+     * @throws Exception while fetching weather data.
+     */
     @Test
-    public void testWeatherService() throws Exception
+    public void testWeatherServiceForCorrectZipCode() throws Exception
     {
         weatherInfo.setZipCode("94117");
         weatherService.fetchWeatherData(weatherInfo);
         Assert.assertNotNull("Error in fetching weather information", weatherInfo.getTempData());
     }
 
+    /**
+     * This method tests weather service for incorrect zip code value.
+     *
+     * @throws Exception while fetching weather data.
+     */
     @Test(expected = WeatherException.class)
     public void testWeatherServiceForIncorrectZipCode() throws Exception
     {
         weatherInfo.setZipCode("986763");
         weatherService.fetchWeatherData(weatherInfo);
     }
-}
+
+} // End Class WeatherServiceTest

@@ -26,7 +26,7 @@
 
     <bean id="messageSource"
           class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="de/gagan/properties/WeatherInfo"/>
+        <property name="basename" value="de/gags/properties/WeatherInfo"/>
     </bean>
 
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">

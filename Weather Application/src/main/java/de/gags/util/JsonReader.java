@@ -1,3 +1,10 @@
+/*
+ * System : WeatherApplication
+ * Package: de.gags.util
+ * Class  : JsonReader
+ *
+ * Veristrat Software 2013
+ */
 package de.gags.util;
 
 import org.json.JSONException;
@@ -7,6 +14,9 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+/**
+ * This is a utility class to read a url and return a JSON object.
+ */
 public class JsonReader {
 
     private static String readAll(Reader rd) throws IOException {
@@ -18,6 +28,16 @@ public class JsonReader {
         return sb.toString();
     }
 
+    /**
+     * This method takes a url as input and return the output in the form of JSON object.
+     *
+     * @param url Input url from where the data is to be fetched.
+     *
+     * @return a JSON object containing the output data.
+     *
+     * @throws IOException if url can't be accessed.
+     * @throws JSONException if JSONObject could not be constructed.
+     */
     public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
         try {
@@ -29,4 +49,5 @@ public class JsonReader {
             is.close();
         }
     }
-}
+
+} // End Class JsonReader
