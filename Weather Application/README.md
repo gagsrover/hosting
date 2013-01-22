@@ -18,4 +18,3 @@ Move into the application directory and run the following coomand to package the
 :mvn package.
 An application war file will be created in the target directory. Copy the application war file and deploy it in the 
 tomcat webapps folder.
-To access the application visit the following url http://localhost:8080/WeatherApp-1.0/weather/
