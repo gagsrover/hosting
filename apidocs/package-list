@@ -1,0 +1,9 @@
+de.gags.common
+de.gags.config
+de.gags.controller
+de.gags.exception
+de.gags.model
+de.gags.service
+de.gags.service.impl
+de.gags.util
+de.gags.validator
