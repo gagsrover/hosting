@@ -19,13 +19,13 @@
     </developers>
 
     <scm>
-        <connection>scm:https://github.com/gagsrover/hosting.git</connection>
-        <developerConnection>scm:https://github.com/gagsrover/hosting.git</developerConnection>
-        <url>https://github.com/gagsrover/hosting.git</url>
+        <connection>scm:git:git@github.com:gagsrover/hosting.git</connection>
+        <developerConnection>scm:git:git@github.com:gagsrover/hosting.git</developerConnection>
+        <url>scm:git:git@github.com:gagsrover/hosting.git</url>
     </scm>
 
     <properties>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>3.0.0.RELEASE</spring.version>
     </properties>
 
     <dependencies>
@@ -54,6 +54,16 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20090211</version>
@@ -61,7 +71,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.4</version>
+            <version>4.9</version>
         </dependency>
     </dependencies>
 
@@ -75,5 +85,13 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <distributionManagement>
+        <site>
+            <id>gh-pages</id>
+            <name>Deployment through GitHub's site deployment plugin</name>
+            <url>file:c:\Users\Gags\Documents\GitHub\hosting</url>
+        </site>
+    </distributionManagement>
 
 </project>

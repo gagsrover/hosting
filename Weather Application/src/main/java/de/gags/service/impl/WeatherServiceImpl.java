@@ -23,7 +23,6 @@ import java.net.UnknownHostException;
 /**
  * This class provides implementation of WeatherService.
  */
-@Service
 public class WeatherServiceImpl implements WeatherService, WeatherConstants
 {
     /**

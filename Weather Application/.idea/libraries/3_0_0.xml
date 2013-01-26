@@ -18,6 +18,8 @@
       <root url="jar://$PROJECT_DIR$/lib/aopalliance.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-core.jar!/" />
+    </SOURCES>
   </library>
 </component>
